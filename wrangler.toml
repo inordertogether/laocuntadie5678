@@ -1,0 +1,19 @@
+name = "laocuntadie5678"
+account_id = "bfcb6ac5b3ceaf42a09607f6f7925823"
+main = "src/index.ts"
+compatibility_date = "2026-09-14"
+workers_dev = false
+routes = [{ pattern = "lookout.coey.dev/*", zone_name = "coey.dev" }]
+
+[durable_objects]
+bindings = [
+  { name = "LOOKOUT_ROOM", class_name = "LookoutRoom" }
+]
+
+[exports.LookoutRoom]
+type = "durable-object"
+storage = "sqlite"
+
+[vars]
+LOOKOUT_HOST = "lookout.coey.dev"
+LOOKOUT_REALTIME_APP_ID = "2852c9d6b70448b4cf2a826524219406"
